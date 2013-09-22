@@ -15,6 +15,9 @@ var DATA_SOURCE_UUID            = '22eac6e924d64bb5be44b36ace7c7bfb';
 var ANCS = function(peripheral) {
   this._peripheral = peripheral;
   this._characteristics = {};
+  this._notifications = {};
+
+  this._lastUid = null;
 
   this.uuid = peripheral.uuid;
 
@@ -68,19 +71,51 @@ ANCS.prototype.discoverServicesAndCharacteristics = function(callback) {
 
     this._characteristics[NOTIFICATION_SOURCE_UUID].notify(true);
     this._characteristics[DATA_SOURCE_UUID].notify(true);
+
+    callback();
   }.bind(this));
 };
 
 ANCS.prototype.onNotification = function(data) {
-  console.log('notification ' + data.toString('hex'));
+  // console.log('notification ' + data.toString('hex'));
 
-  var notification = new Notification(data);
+  var notification = new Notification(this, data);
+
+  this._notifications[notification.uid] = notification;
 
   this.emit('notification', notification);
 };
 
 ANCS.prototype.onData = function(data) {
-  console.log('data ' + data.toString('hex'));
+  // console.log('data ' + data.toString('hex'));
+
+  var commandId = data.readUInt8(0);
+
+  if (commandId === 0x00) {
+    var uid = data.readUInt32LE(1);
+    var notificationData = data.slice(5);
+
+    this._lastUid = uid;
+
+    this._notifications[uid].emit('data', notificationData);
+  } else {
+    if (this._lastUid) {
+      this._notifications[this._lastUid].emit('data',data);
+    }
+  }
+};
+
+ANCS.prototype.requestNotificationAttribute = function(uid, attributeId, maxLength) {
+  var buffer = new Buffer(maxLength ? 8 : 6);
+
+  buffer.writeUInt8(0x00, 0);
+  buffer.writeUInt32LE(uid, 1);
+  buffer.writeUInt8(attributeId, 5);
+  if (maxLength) {
+    buffer.writeUInt16LE(maxLength, 6);
+  }
+
+  this._characteristics[CONTROL_POINT_UUID].write(buffer, true);
 };
 
 module.exports = ANCS;
