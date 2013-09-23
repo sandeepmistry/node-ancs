@@ -37,14 +37,14 @@ __Notification Events__
     });
 
  * notification has the following properties
-   * event
+   * event (one of):
      * added
      * modified
      * removed
    * flags (array):
      * silent
      * important
-   * category
+   * category (one of):
      * other
      * incomingCall
      * missedCall
@@ -60,9 +60,7 @@ __Notification Events__
    * categoryCount
    * uid
 
-__Notification__
-
-Operations for 'added' or 'modified' notifications (event property):
+__Operations for 'added' or 'modified' notifications (event property)__
 
 Read App Identifier
 
