@@ -12,6 +12,7 @@ Prerequisites
 -------------
 
  * iOS 7 device with an app in peripheral mode which exposes ANCS
+ * your iOS device will ask to be paired with your Mac
 
 Usage
 -----
@@ -61,8 +62,6 @@ __Notification Events__
    * uid
 
 __Operations for 'added' or 'modified' notifications (event property)__
-
-:
 
 Read App Identifier
 
