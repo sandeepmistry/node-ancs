@@ -62,6 +62,8 @@ __Notification Events__
 
 __Operations for 'added' or 'modified' notifications (event property)__
 
+:
+
 Read App Identifier
 
     notification.readAppIdentifier(function(appIdentifier) {
@@ -98,3 +100,9 @@ Read All Attributes
       ...
     });
 
+ * attributes has the following properties
+   * appIdentifier
+   * title
+   * subtitle
+   * message
+   * date
