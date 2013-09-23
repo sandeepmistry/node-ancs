@@ -1,7 +1,7 @@
 ancs
 =========
 
-A node.js lib to access the [Apple Notification Center Service (ANCS)](https://developer.apple.com/library/ios/documentation/CoreBluetooth/Reference/AppleNotificationCenterServiceSpecification/Introduction/Introduction.html)
+A node.js lib to access the Apple Notification Center Service (ANCS)[Apple Notification Center Service (ANCS)](https://developer.apple.com/library/ios/documentation/CoreBluetooth/Reference/AppleNotificationCenterServiceSpecification/Introduction/Introduction.html)
 
 Install
 -------
