@@ -4,7 +4,7 @@
   "description": "A node.js lib to access the Apple Notification Center Service (ANCS)",
   "main": "index.js",
   "scripts": {
-    "test": "jshint *.js"
+    "test": "jshint *.js lib/*.js"
   },
   "repository": {
     "type": "git",
