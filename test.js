@@ -6,7 +6,7 @@ ANCS.discover(function(ancs) {
   ancs.connect(function() {
     console.log('connected');
     ancs.discoverServicesAndCharacteristics(function() {
-      console.log('services and charateristics discovered');
+      console.log('services and characteristics discovered');
     });
 
     ancs.on('notification', function(notification) {
