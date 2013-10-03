@@ -1,6 +1,6 @@
 {
   "name": "ancs",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A node.js lib to access the Apple Notification Center Service (ANCS)",
   "main": "index.js",
   "scripts": {
@@ -28,6 +28,6 @@
     "jshint": "~2.1.11"
   },
   "dependencies": {
-    "noble": "~0.1.4"
+    "noble": "~0.2.0"
   }
 }
