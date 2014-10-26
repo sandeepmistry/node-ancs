@@ -1,6 +1,8 @@
 ancs
 =========
 
+[![Analytics](https://ga-beacon.appspot.com/UA-56089547-1/sandeepmistry/node-ancs?pixel)](https://github.com/igrigorik/ga-beacon)
+
 A node.js lib to access the [Apple Notification Center Service (ANCS)](https://developer.apple.com/library/ios/documentation/CoreBluetooth/Reference/AppleNotificationCenterServiceSpecification/Introduction/Introduction.html)
 
 Install
