@@ -1,43 +1,52 @@
-ancs
-=========
+# ancs
+
 
 [![Analytics](https://ga-beacon.appspot.com/UA-56089547-1/sandeepmistry/node-ancs?pixel)](https://github.com/igrigorik/ga-beacon)
 
 A node.js lib to access the [Apple Notification Center Service (ANCS)](https://developer.apple.com/library/ios/documentation/CoreBluetooth/Reference/AppleNotificationCenterServiceSpecification/Introduction/Introduction.html)
 
-Install
--------
+## Install
 
-    npm install ancs
+```sh
+npm install ancs
+```
 
-Prerequisites
--------------
+## Prerequisites
 
  * iOS 7 device with an app in peripheral mode which exposes ANCS
  * your iOS device will ask to be paired with your Mac
 
-Usage
------
+## Usage
 
-    var ANCS = require('ancs');
+```javascript
+var ANCS = require('ancs');
+```
 
-__Discover__
+### Discover
 
-    ANCS.discover(callback(ancs));
+```javascript
+ANCS.discover(callback(ancs));
+```
 
-__Connect__
+### Connect__
 
-    ancs.connect(callback);
+```javascript
+ancs.connect(callback);
+```
 
-__Disconnect__
+### Disconnect
 
-    ancs.disconnect(callback);
+```javascript
+ancs.disconnect(callback);
+```
 
-__Notification Events__
+### Notification Event
 
-    ancs.on('notification', function(notification) {
-        ...
-    });
+```javascript
+ancs.on('notification', function(notification) {
+    // ...
+});
+```
 
  * notification has the following properties
    * event (one of):
@@ -63,44 +72,53 @@ __Notification Events__
    * categoryCount
    * uid
 
-__Operations for 'added' or 'modified' notifications (event property)__
+### Operations for 'added' or 'modified' notifications (event property)
 
-Read App Identifier
+#### Read App Identifier
 
-    notification.readAppIdentifier(function(appIdentifier) {
-      ...
-    });
+```javascript
+notification.readAppIdentifier(function(appIdentifier) {
+  // ...
+});
+```
 
-Read Title
+#### Read Title
 
-    notification.readTitle(function(title) {
-      ...
-    });
+```javascript
+notification.readTitle(function(title) {
+  // ...
+});
+```
 
-Read Subtitle
+#### Read Subtitle
 
-    notification.readSubtitle(function(subtitle) {
-      ...
-    });
+```javascript
+notification.readSubtitle(function(subtitle) {
+  // ...
+});
+```
 
-Read Message
+#### Read Message
 
-    notification.readMessage(function(message) {
-      ...
-    });
+```javascript
+notification.readMessage(function(message) {
+  // ...
+});
+```
 
-Read Date
+#### Read Date
+```javascript
+notification.readDate(function(date) {
+  // ...
+});
+```
 
-    notification.readDate(function(date) {
-      ...
-    });
-
-Read All Attributes
-
-    notification.readAttributes(function(attributes) {
-      ...
-    });
-
+#### Read All Attributes
+```javascript
+notification.readAttributes(function(attributes) {
+  // ...
+});
+```
  * attributes has the following properties
    * appIdentifier
    * title
