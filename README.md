@@ -27,7 +27,7 @@ var ANCS = require('ancs');
 ANCS.discover(callback(ancs));
 ```
 
-### Connect__
+### Connect
 
 ```javascript
 ancs.connect(callback);
