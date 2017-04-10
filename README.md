@@ -1,5 +1,7 @@
 # ancs
 
+[![Join the chat at https://gitter.im/sandeepmistry/node-ancs](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/sandeepmistry/node-ancs?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 [![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/sandeepmistry/node-ancs?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 A node.js lib to access the [Apple Notification Center Service (ANCS)](https://developer.apple.com/library/ios/documentation/CoreBluetooth/Reference/AppleNotificationCenterServiceSpecification/Introduction/Introduction.html)
